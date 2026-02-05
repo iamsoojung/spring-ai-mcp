@@ -1,12 +1,7 @@
 package com.soojung.mcp.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
 
-@Data
-public class ChatRequest {
-
-    @NotBlank
-    private String message;
-}
-
+public record ChatRequest(
+    @NotBlank(message = "메시지는 비어 있을 수 없습니다.") String message
+) {}
